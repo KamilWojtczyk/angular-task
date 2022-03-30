@@ -1,0 +1,18 @@
+<div class="box">
+  <mat-expansion-panel (opened)="panelOpenState = true"
+                       (closed)="panelOpenState = false">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Wybór produktów
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <div class="products-menu">
+      <div *ngFor="let product of products">
+        <button class="tooltip" [class.selected]="product === selectedProduct" type="button" (click)="onSelect(product)">
+            {{product.name}}
+            <span class="tooltiptext">{{product.description}}</span>
+        </button>
+      </div>
+    </div>
+  </mat-expansion-panel>
+</div>
